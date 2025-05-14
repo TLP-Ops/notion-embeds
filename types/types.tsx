@@ -76,3 +76,19 @@ export type ButtonConfig = {
   padding: number;
   pos: IconPositions;
 };
+
+export type TimezoneConfig = {
+  id: string;
+  /** IANA timezone identifier, e.g. "America/Los_Angeles" */
+  tz: string;
+  /** Short display label such as "PST" or city name */
+  label: string;
+  /** List of team member names that belong to this timezone */
+  team: string[];
+  /** Toggle for 24-hour format (true) or 12-hour (false) */
+  format24: boolean;
+  /** Orientation of widget: vertical (default) or horizontal */
+  layout?: "vertical" | "horizontal";
+  /** Compact mode hides date and uses smaller font */
+  compact?: boolean;
+};

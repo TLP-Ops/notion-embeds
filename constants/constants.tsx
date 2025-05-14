@@ -1,9 +1,10 @@
-import { StockConfig, StockInterval, MediumFormat, WidgetDisplay, IconPositions } from "@/types/types";
+import { StockConfig, StockInterval, MediumFormat, WidgetDisplay, IconPositions, TimezoneConfig } from "@/types/types";
 import MediumImg from "../public/medium.gif";
 import SpotifyImg from "../public/spotify.gif";
 import StockImg from "../public/stock.png";
 import QuoteImg from "../public/quote.png"
 import ButtonImg from "../public/button.gif"
+const ClockImg = "https://via.placeholder.com/282x230.png?text=Clock" as unknown as any;
 
 export const DEFAULT_STOCK_CARDS_CONFIG: StockConfig[] = [
   {
@@ -35,6 +36,18 @@ export const DEFAULT_STOCK_CARDS_CONFIG: StockConfig[] = [
     showClose: false,
     showHigh: true,
     showLow: true,
+  },
+];
+
+export const DEFAULT_TIMEZONE_CARDS_CONFIG: TimezoneConfig[] = [
+  {
+    id: Date.now().toString(36) + Math.random().toString(36).substring(2),
+    tz: "UTC",
+    label: "UTC",
+    team: [],
+    format24: true,
+    layout: "vertical",
+    compact: false,
   },
 ];
 
@@ -251,6 +264,14 @@ export const WIDGET_DISPLAY_SCHEMA: WidgetDisplay[] = [
     description:
       "Display a fully customizable button.",
     path: "/build/button",
+  },
+  {
+    id: "clock",
+    title: "World Clock",
+    img: ClockImg,
+    description:
+      "Display current time in multiple timezones with team member info.",
+    path: "/build/time",
   },
 ];
 

@@ -98,13 +98,30 @@ const Product = ({ widget }: { widget: WidgetDisplay }) => {
             },
           }}
         >
-          <Image
-            className="grid-item-thumbnail"
-            height={230}
-            width={282}
-            src={widget.img}
-            alt="#"
-          />
+          {widget.id === "clock" ? (
+            <Box
+              height="100%"
+              width="100%"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              bg="black"
+              color="green.400"
+              fontFamily="monospace"
+              fontSize="6xl"
+              fontWeight="bold"
+            >
+              12:45
+            </Box>
+          ) : (
+            <Image
+              className="grid-item-thumbnail"
+              height={230}
+              width={282}
+              src={widget.img}
+              alt="#"
+            />
+          )}
         </Box>
         <Stack pt={20} align={"center"}>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={600}>
